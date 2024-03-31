@@ -1,0 +1,133 @@
+/* Base styles */
+body {
+    font-size: 11px;
+    line-height: 16px;
+    font-family: Arial, Tahoma;
+    padding-top: 60px;
+}
+
+.AtecWebsite {
+    margin: 20px 50px;
+    padding: 0;
+}
+
+
+
+a {
+    color: #fe5800;
+    text-decoration: none;
+    padding: 3px 6px;
+    border-radius: 8px;
+    font-size: 11px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    background-color: #fe5800;
+    color: #fff;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-5px);
+    }
+    60% {
+        transform: translateY(-3px);
+    }
+}
+
+a:hover {
+    animation: bounce 1.2s ease;
+}
+
+span {
+    color: #fe5800;
+    font-weight: bold;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+
+footer p {
+   margin: 0 auto;
+    color: #1E90FF;
+    width: 100%;
+}
+
+.Cfooter{
+    margin-left: 80%;
+}
+
+@media only screen and (max-width: 1920px) {
+
+    body{
+        margin-top: 45px ;
+        padding-bottom: 3.74rem;
+    }
+
+    .AtecWebsite {
+        margin: auto 50px;
+    }
+
+    .Cfooter{
+        margin-left: 81%;
+    }
+    
+}
+
+
+@media only screen and (max-width: 1224px) {
+
+    body{
+        margin-top: 45px ;
+        padding-bottom: 3.74rem;
+    }
+
+    .AtecWebsite {
+        margin: auto 50px;
+    }
+  
+
+    .Cfooter{
+        margin-left: 73%;
+    }
+    
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+
+    body{
+        margin-top: 45px ;
+        padding-bottom: 4.74rem;
+    }
+
+    .AtecWebsite {
+        margin: auto 50px;
+    }
+  
+    .navbar-brand {
+        font-size: 25px;
+    }
+  
+    span {
+        font-size: 25px;
+    }
+
+    .Cfooter{
+        margin-left: 63%;
+    }
+       
+}

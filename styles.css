@@ -1,0 +1,73 @@
+/* Custom CSS */
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 400px;
+}
+
+/* Basic styling */
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+label, input {
+    display: block;
+    margin-bottom: 10px;
+}
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Style default anchor tag like a button */
+a.button {
+    display: inline-block;
+    padding: 3px 15px;
+    background-color: #f0f0f0;
+    color: #000000;
+    text-decoration: none;
+    border: 0.15em solid #000000;
+    cursor: pointer;
+    border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+a.button:hover {
+    background-color: #d4ba23;
+}
+
+footer p {
+    margin: 0 auto;
+     color: #1E90FF;
+     width: 100%;
+     margin-left: 80%;
+ }
+
+ .mt_form{
+    margin-top: 150px;
+ }
+
+
+ .navbar-brand {
+    font-weight: bold;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+span {
+    color: #fe5800;
+    font-weight: bold;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-style: italic;
+}
