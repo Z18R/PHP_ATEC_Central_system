@@ -22,7 +22,7 @@
     <section>
         <nav class="navbar navbar-expand-xl bg-dark navbar-dark p-4 fixed-top ">
             <span href="#" class="navbar-brand"><span>ATEC </span>CENTRAL SYSTEMS</span>
-</section>
+    </section>  
 
 <!-- ATEC E-LOGSHEET (LIVE) -->
 
@@ -43,7 +43,6 @@
   <nav>
     <ul>
       <li><a href="http://192.168.5.9:400" id="Prod" target="_blank" rel="noopener noreferrer">WEBMES PROD</a></li>
-      <li><a href="#" target="_blank" rel="noopener noreferrer">ATEC WEBMES STAGING (coming soon)</a></li>  
     </ul>
     </div>
   </nav>
@@ -58,92 +57,6 @@
     </ul>
     </div>
   </nav>
-
-<!-- ATEC LABEL EXPRESS -->
-
-    <div class="AtecWebsite">
-    <h5>ATEC LABEL EXPRESS</h5>
-
-  <nav>
-    <ul>
-      <li><a href="http://192.168.5.12:770/LogIn.aspx" target="_blank" rel="noopener noreferrer">LABEL EXPRESS</a></li>
-   
-    </ul>
-    </div>
-  </nav>
-
-<!-- ATEC CENTRAL ACCESS -->
-
-    <div class="AtecWebsite">
-    <h5>ATEC CENTRAL ACCESS</h5>
-
-  <nav>
-    <ul>
-      <li><a href="http://msdynamics-srvr/CentralAccess/default.aspx" target="_blank" rel="noopener noreferrer">CENTRAL ACCESS</a></li>
-   
-    </ul>
-    </div>
-  </nav>
-
-<!-- ATEC INTRANET -->
-
-    <div class="AtecWebsite">
-    <h5>ATEC INTRANET</h5>
-  <nav>
-    <ul>
-      <li><a href="http://ispl-fs/default.aspx" target="_blank" rel="noopener noreferrer">INTRANET</a></li>
-    </ul>
-    </div>
-  </nav>
-
-<!-- ATEC NEW INTRANET -->
-
-    <div class="AtecWebsite">
-    <h5>ATEC NEW INTRANET</h5>
-  <nav>
-    <ul>
-      <li><a href="http://192.168.6.20:5000/#/signin" target="_blank" rel="noopener noreferrer">NEW INTRANET</a></li>
-   
-    </ul>
-    </div>
-  </nav>
-
-<!-- ATEC SUPPORT SYSTEM	 -->
-
-    <div class="AtecWebsite">
-    <h5>ATEC SUPPORT SYSTEM</h5>
-
-  <nav>
-    <ul>
-      <li><a href="http://192.168.1.8/Support_Systems/Login.aspx" target="_blank" rel="noopener noreferrer">SUPPORT SYSTEM</a></li>
-   
-    </ul>
-    </div>
-  </nav>
-
-
-<!-- ATEC Monitoring -->
-
-  <div class="AtecWebsite">
-  <h5>ATEC Monitoring</h5>
-<nav>
-  <ul>
-    <li><a href="http://192.168.8.25/" target="_blank" rel="noopener noreferrer">TEMPERATURE MONITORING</a></li>
-  </ul>
-  </div>
-</nav>
-
-
-<!-- ATEC Monitoring -->
-
-  <div class="AtecWebsite">
-  <h5>ATEC REPORT PORTAL</h5>
-<nav>
-  <ul>
-    <li><a href="http://192.168.5.12:777/production/" target="_blank" rel="noopener noreferrer">ATEC REPORT PORTAL</a></li>
-  </ul>
-  </div>
-</nav>
 
 
 <!-- ATEC CONNECTIVITY SYSTEMS WebMES -->
