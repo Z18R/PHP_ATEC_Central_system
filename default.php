@@ -26,7 +26,7 @@
 
 <!-- ATEC E-LOGSHEET (LIVE) -->
 
-<div class="AtecWebsite">
+<!-- <div class="AtecWebsite">
     <h5>ATEC E-LOGSHEET (LIVE)</h5>
   <nav>
     <ul>
@@ -34,34 +34,34 @@
       <li><a href="#" target="_blank" rel="noopener noreferrer">E-LOGSHEET (Full Access)</a></li>  
     </ul>
     </div>
-  </nav>
+  </nav> -->
 
 <!-- ATEC WEBMES (LIVE) -->
 
-    <div class="AtecWebsite">
+    <!-- <div class="AtecWebsite">
     <h5>ATEC WEBMES (LIVE)</h5>
   <nav>
     <ul>
       <li><a href="http://192.168.5.9:400" id="Prod" target="_blank" rel="noopener noreferrer">WEBMES PROD</a></li>
     </ul>
     </div>
-  </nav>
+  </nav> -->
   
 <!-- ATEC WEBMES SUPPORT -->
 
-    <div class="AtecWebsite">
+    <!-- <div class="AtecWebsite">
     <h5>ATEC WEBMES SUPPORT</h5>
   <nav>
     <ul>
       <li><a href="http://192.168.5.12:200" target="_blank" rel="noopener noreferrer">WEBMES SUPPORT</a></li>
     </ul>
     </div>
-  </nav>
+  </nav> -->
 
 
 <!-- ATEC CONNECTIVITY SYSTEMS WebMES -->
 
-<div class="AtecWebsite">
+<!-- <div class="AtecWebsite">
   <h5>ATEC CONNECTIVITY SYSTEMS</h5>
 <nav>
   <ul>
@@ -70,8 +70,47 @@
     <li><a href="http://192.168.101.68:400/" target="_blank" rel="noopener noreferrer">CONNECTIVITY PORTAL</a></li>
   </ul>
   </div>
-</nav>
-</header>
+</nav> -->
+
+
+<div class="AtecWebsite">
+    <?php
+    // Include the SQL handler function
+    include_once 'phpCon/SqlHandler.php';
+
+    // Example SQL query
+    $sql = "SELECT TOP 10 * FROM sys_Links";
+
+    // Execute the SQL query
+    $results = executeSQLQuery($sql);
+
+    foreach ($results as $row) {
+        echo "<h5>{$row['Title']}</h5>";
+        echo "<div class='user-info'>";
+        echo "<ul>";
+
+        // Check if redirect_link1 exists and is not null
+        if (!empty($row['redirect_link1'])) {
+            echo "<li><a href='" . $row['redirect_link1'] . "' target='_blank' rel='noopener noreferrer'>" . $row['link1'] . "</a></li>";
+        }
+
+        if (!empty($row['redirect_link2'])) {
+            echo "<li><a href='" . $row['redirect_link2'] . "' target='_blank' rel='noopener noreferrer'>" . $row['link2'] . "</a></li>";
+        }
+
+        if (!empty($row['redirect_link3'])) {
+            echo "<li><a href='" . $row['redirect_link3'] . "' target='_blank' rel='noopener noreferrer'>" . $row['link3'] . "</a></li>";
+        }
+
+        if (!empty($row['redirect_link4'])) {
+            echo "<li><a href='" . $row['redirect_link4'] . "' target='_blank' rel='noopener noreferrer'>" . $row['link4'] . "</a></li>";
+        }
+        echo "</ul>";
+        echo "</div>"; // Close user-info div
+        echo "<hr>";
+    }
+    ?>
+</div>
 
 
 <!-- Footer -->
