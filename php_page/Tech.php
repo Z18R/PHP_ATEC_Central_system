@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../CSS/defaultCss.css">
 </head>
 <body>
 <!DOCTYPE html>
@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atec Directory</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/defaultCss.css">
+    <link rel="stylesheet" href="../styles/defaultCss.css">
 </head>
 <body>
     <section>
@@ -30,10 +30,10 @@
 <div class="AtecWebsite">
     <?php
     // Include the SQL handler function
-    include_once 'phpCon/SqlHandler.php';
+    include_once '../phpCon/SqlHandler.php';
 
     // Example SQL query
-    $sql = "SELECT TOP 10 * FROM sys_Links";
+    $sql = "SELECT TOP 10 * FROM sys_Links WHERE Department = 'Tech'";
 
     // Execute the SQL query
     $results = executeSQLQuery($sql);
@@ -50,14 +50,6 @@
 
         if (!empty($row['redirect_link2'])) {
             echo "<li><a href='" . $row['redirect_link2'] . "' target='_blank' rel='noopener noreferrer'>" . $row['link2'] . "</a></li>";
-        }
-
-        if (!empty($row['redirect_link3'])) {
-            echo "<li><a href='" . $row['redirect_link3'] . "' target='_blank' rel='noopener noreferrer'>" . $row['link3'] . "</a></li>";
-        }
-
-        if (!empty($row['redirect_link4'])) {
-            echo "<li><a href='" . $row['redirect_link4'] . "' target='_blank' rel='noopener noreferrer'>" . $row['link4'] . "</a></li>";
         }
         echo "</ul>";
         echo "</div>"; // Close user-info div

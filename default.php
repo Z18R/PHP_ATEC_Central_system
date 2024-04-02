@@ -22,6 +22,9 @@
     <section>
         <nav class="navbar navbar-expand-xl bg-dark navbar-dark p-4 fixed-top ">
             <span href="#" class="navbar-brand"><span>ATEC </span>CENTRAL SYSTEMS</span>
+            <li class="nav-item ml-auto">
+                <a class="nav-link go-back text-white" href="../">Go Back</a>
+            </li>
     </section>  
 
 <!-- ATEC E-LOGSHEET (LIVE) -->
@@ -79,7 +82,7 @@
     include_once 'phpCon/SqlHandler.php';
 
     // Example SQL query
-    $sql = "SELECT TOP 10 * FROM sys_Links";
+    $sql = "SELECT TOP 4 * FROM sys_Links";
 
     // Execute the SQL query
     $results = executeSQLQuery($sql);

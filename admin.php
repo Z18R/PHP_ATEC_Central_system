@@ -33,7 +33,7 @@
     include_once 'phpCon/SqlHandler.php';
 
     // Example SQL query
-    $sql = "SELECT TOP 10 * FROM sys_Links";
+    $sql = "SELECT * FROM sys_Links";
 
     // Execute the SQL query
     $results = executeSQLQuery($sql);
