@@ -1,5 +1,6 @@
 <?php
 session_start();
+define('MyConst', TRUE);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -178,6 +179,7 @@ session_start();
         </div>
     </div>
 </div>
+
 
 
 
