@@ -1,0 +1,124 @@
+
+    .update-form {
+        display: flex;
+        align-items: flex-end;
+    }
+    .update-form .form-group {
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
+    .update-form .btn-update {
+        margin-top: 5px;
+    }
+    .container {
+        margin-top: 2%;
+    }
+    .footer {
+        font-size: smaller;
+        padding-top: 5px; /* Adjust the top padding as needed */
+        padding-bottom: 5px; /* Adjust the bottom padding as needed */
+    }
+    .table-responsive{
+        padding-bottom: 20px;
+    }
+    span{
+    color: #fe5800;
+    font-weight: bold;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-style: italic;
+    }
+.div-container{
+font-size: 15px;
+}
+
+.button {
+    display: inline-block;
+    padding: 3px 15px;
+    background-color: #f0f0f0;
+    color: #000000;
+    text-decoration: none;
+    border: 0.15em solid #000000;
+    cursor: pointer;
+    border-radius: 5px; /* Optional: Add rounded corners */
+    margin: 0 auto;
+}
+button:hover {
+    background-color: #fe5800;
+}
+a.button{
+    display: inline-block;
+    padding: 3px 15px;
+    background-color: #f0f0f0;
+    color: #000000;
+    text-decoration: none;
+    border: 0.15em solid #000000;
+    cursor: pointer;
+    border-radius: 5px; /* Optional: Add rounded corners */
+}
+a.button:hover{
+    background-color: #fe5800;
+}
+
+.Cfooter{
+margin-left: 80%;
+}
+
+@media only screen and (max-width: 1920px) {
+
+body{
+    margin-top: 45px ;
+    padding-bottom: 3.74rem;
+}
+
+.AtecWebsite {
+    margin: auto 50px;
+}
+.Cfooter{
+    margin-left: 81%;
+}
+
+}
+@media only screen and (max-width: 1224px) {
+
+body{
+    margin-top: 45px ;
+    padding-bottom: 3.74rem;
+}
+
+.AtecWebsite {
+    margin: auto 50px;
+}
+
+
+.Cfooter{
+    margin-left: 73%;
+}
+
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+
+body{
+    margin-top: 45px ;
+    padding-bottom: 4.74rem;
+}
+
+.AtecWebsite {
+    margin: auto 50px;
+}
+
+.navbar-brand {
+    font-size: 25px;
+}
+
+span {
+    font-size: 25px;
+}
+
+.Cfooter{
+    margin-left: 63%;
+}
+    
+}
