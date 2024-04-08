@@ -6,7 +6,8 @@ function executeSQLSelect($sql) {
     $connectionOptions = array(
         "Database" => "MES_ATEC", // Database name
         "Uid" => "sa",                 // Username
-        "PWD" => "18Bz23efBd0J"        // Password
+        "PWD" => "18Bz23efBd0J",        // Password
+        "TrustServerCertificate" => true //set this to avoid error in login database
     );
 
     // Establish the connection
@@ -41,7 +42,8 @@ function executeSQLUpdate($sql) {
     $connectionOptions = array(
         "Database" => "MES_ATEC", // Database name
         "Uid" => "sa",                 // Username
-        "PWD" => "18Bz23efBd0J"        // Password
+        "PWD" => "18Bz23efBd0J",        // Password
+        "TrustServerCertificate" => true //set this to avoid error in login database
     );
 
     // Establish the connection
@@ -57,48 +59,11 @@ function executeSQLUpdate($sql) {
     if ($stmt === false) {
         die(print_r(sqlsrv_errors(), true));
     } else {
-        echo "Update executed successfully";
+        echo "<br>";
+        echo "<div class='container'><div class='alert alert-success'>Update executed successfully</div></div>";
     }
 
     // Clean up statement and close connection
     sqlsrv_free_stmt($stmt);
     sqlsrv_close($conn);
 }
-
-// Display the lot number filter form
-echo "<form action='' method='post'>";
-echo "Filter by Lot Number: <input type='text' name='lotnumber'><br>";
-echo "<input type='submit' name='submitFilter' value='Filter'>";
-echo "</form>";
-
-// Handle lot number filter submission
-if (isset($_POST['submitFilter'])) {
-    $lotNumberFilter = $_POST['lotnumber'];
-    $sqlSelect = "SELECT lotnumber, Commitdate FROM PL_ProductionOrder WHERE customercode = 18 AND processtypecode = 1 AND lotnumber LIKE '%$lotNumberFilter%'";
-    
-    // Execute select query
-    $data = executeSQLSelect($sqlSelect);
-    
-    // Display results
-    if (!empty($data)) {
-        echo "<table border='1'>
-            <tr>
-                <th>Lot Number</th>
-                <th>Commit Date</th>
-            </tr>";
-        foreach ($data as $row) {
-            // Convert the Commitdate to a formatted string
-            $formattedDate = $row['Commitdate']->format('Y-m-d'); // Format for the date picker
-
-            echo "<tr>
-                    <td>" . $row['lotnumber'] . "</td>
-                    <td>" . $formattedDate . "</td>
-                </tr>";
-        }
-        echo "</table>";
-    } else {
-        echo "No records found.";
-    }
-}
-
-?>

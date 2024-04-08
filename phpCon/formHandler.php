@@ -1,9 +1,7 @@
-<?
+<?php
 
-if(!defined('MyConst')) {
-    die('Direct access not permitted');
- }
 session_start();
+
 
 // Initialize $error_message variable
 $error_message = "";

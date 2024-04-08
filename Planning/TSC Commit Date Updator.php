@@ -1,7 +1,18 @@
+<?php
+session_start();
+
+// Check if the user is not logged in or is not an admin
+if (!isset($_SESSION["loggedin"])) {
+    // Redirect the user to the login page or another appropriate page
+    header("Location: ../index.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="icon" href="images/LOGO.png" type="image/png">
+<link rel="icon" href="../images/LOGO.png" type="image/png">
 <link rel="stylesheet" href="styles/defaultCss.css">
     <section>
         <nav class="navbar navbar-expand-xl bg-dark navbar-dark p-2 fixed-top ">
@@ -10,12 +21,11 @@
                 <a class="nav-link go-back text-white" href="../">Go Back</a>
             </li>
     </section>  
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TSC Commit Date Updator</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <!-- Include Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Include jQuery -->
@@ -153,75 +163,10 @@
 </head>
 <body>
 
+
 <?php
 
-function executeSQLSelect($sql) {
-    // Database connection information
-    $serverName = "DESKTOP-6E9LU1F\\SQLEXPRESS"; // Server name
-    $connectionOptions = array(
-        "Database" => "MES_ATEC", // Database name
-        "Uid" => "sa",                 // Username
-        "PWD" => "18Bz23efBd0J",        // Password
-        "TrustServerCertificate" => true //set this to avoid error in login database
-    );
-
-    // Establish the connection
-    $conn = sqlsrv_connect($serverName, $connectionOptions);
-
-    // Check connection
-    if ($conn === false) {
-        die(print_r(sqlsrv_errors(), true));
-    }
-
-    // Execute the select query
-    $stmt = sqlsrv_query($conn, $sql);
-    if ($stmt === false) {
-        die(print_r(sqlsrv_errors(), true));
-    } else {
-        // Fetch and return results
-        $data = array();
-        while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-            $data[] = $row;
-        }
-        return $data;
-    }
-
-    // Clean up statement and close connection
-    sqlsrv_free_stmt($stmt);
-    sqlsrv_close($conn);
-}
-
-function executeSQLUpdate($sql) {
-    // Database connection information
-    $serverName = "DESKTOP-6E9LU1F\\SQLEXPRESS"; // Server name
-    $connectionOptions = array(
-        "Database" => "MES_ATEC", // Database name
-        "Uid" => "sa",                 // Username
-        "PWD" => "18Bz23efBd0J",        // Password
-        "TrustServerCertificate" => true //set this to avoid error in login database
-    );
-
-    // Establish the connection
-    $conn = sqlsrv_connect($serverName, $connectionOptions);
-
-    // Check connection
-    if ($conn === false) {
-        die(print_r(sqlsrv_errors(), true));
-    }
-
-    // Execute the update query
-    $stmt = sqlsrv_query($conn, $sql);
-    if ($stmt === false) {
-        die(print_r(sqlsrv_errors(), true));
-    } else {
-        echo "<br>";
-        echo "<div class='container'><div class='alert alert-success'>Update executed successfully</div></div>";
-    }
-
-    // Clean up statement and close connection
-    sqlsrv_free_stmt($stmt);
-    sqlsrv_close($conn);
-}
+require_once 'SQLhandler.php';
 
 // Display the lot number filter form with Bootstrap styling
 echo "<div class='container mt-0'>";
@@ -235,6 +180,8 @@ echo "<label for='dateformat'>Date Format (e.g., Y-m-d):</label>";
 echo "<input type='text' class='form-control' id='dateformat' name='dateformat' value='Y-m-d'>";
 echo "</div>";
 echo "<button type='submit' class='btn button' name='submitFilter'>Filter</button>";
+echo "<span class='ml-5'></span>";
+echo "<button type='help' class='btn button' id='loadContent' name='submithelp'>Help</button>";
 echo "</form>";
 echo "</div>";
 
@@ -312,8 +259,18 @@ if (isset($_POST['submitUpdate'])) {
 }
 ?>
 
+<div id="ajaxContent"></div>
+
 <!-- Include jQuery UI Datepicker -->
 <script>
+    
+    $(document).ready(function() {
+        $("#loadContent").click(function(event) {
+            event.preventDefault(); // Prevent default button behavior (form submission)
+            $("#ajaxContent").load("tscHelp.txt"); // Load the content from sample.txt into the element with the ID "ajaxContent"
+        });
+    });
+
     // Initialize Datepicker
     $(document).ready(function() {
         $("#dateformat").datepicker({

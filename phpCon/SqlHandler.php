@@ -13,10 +13,7 @@
 //     echo $e->getMessage();
 //     die(print_r(sqlsrv_errors(), true));
 // }
-//
-if(!defined('MyConst')) {
-    die('Direct access not permitted');
- }
+// 
 
 function executeSQLQuery($sql, $params = array()) {
     // Database connection options
