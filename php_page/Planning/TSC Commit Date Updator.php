@@ -13,13 +13,13 @@ if (!isset($_SESSION["loggedin"])) {
 <html lang="en">
 <head>
 <link rel="icon" href="../images/LOGO.png" type="image/png">
-<link rel="stylesheet" href="styles/defaultCss.css">
-<link rel="stylesheet" href="tsc.css">
+<link rel="stylesheet" href="../../styles/defaultCss.css">
+<link rel="stylesheet" href="../../styles.css">
     <section>
         <nav class="navbar navbar-expand-xl bg-dark navbar-dark p-2 fixed-top ">
             <span href="#" class="navbar-brand"><span>ATEC </span>CENTRAL SYSTEMS</span>
             <li class="nav-item ml-auto">
-                <a class="nav-link go-back text-white" href="../">Go Back</a>
+                <a class="nav-link go-back text-white" href="../Planning.php">Go Back</a>
             </li>
     </section>  
     <meta charset="UTF-8">
