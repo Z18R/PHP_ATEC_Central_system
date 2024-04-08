@@ -12,7 +12,7 @@ if (!isset($_SESSION["loggedin"])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="icon" href="../images/LOGO.png" type="image/png">
+<link rel="icon" href="../../images/LOGO.png" type="image/png">
 <link rel="stylesheet" href="../../styles/defaultCss.css">
 <link rel="stylesheet" href="../../styles.css">
     <section>
