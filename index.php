@@ -14,6 +14,55 @@ session_start();
     <link rel="stylesheet" href="styles.css">
 
     <style>
+        /* additional css for new LOGIN */
+    body {
+        
+        background-color: #f8f9fa;
+        
+        }
+        .login-container {
+            max-width: 400px;
+            margin: auto;
+            margin-top: 100px;
+            border: 1px solid #ccc;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-form button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #0a244d;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .login-form button[type="submit"]:hover {
+            background-color: #fe5800;
+        }
+        .login-form .signup-link {
+            text-align: center;
+        }
+        .login-form .signup-link a {
+            color: #007bff;
+        }
+        /* additional css for new LOGIN */
+        
     span {
     color: #fe5800;
     font-weight: bold;
@@ -24,6 +73,8 @@ session_start();
     .div-container{
     font-size: 15px;
     }
+
+    
  
     .button {
         display: inline-block;
@@ -132,26 +183,27 @@ session_start();
     <section>
         <nav class="navbar navbar-expand-xl bg-dark navbar-dark p-4 fixed-top ">
             <span href="#" class="navbar-brand"><span>ATEC </span>CENTRAL SYSTEMS</span>
-    </section>  
+    </section> 
+    
+    <!-- add the whole code -->
+        <div class="container login-container">
+        <div class="card mt-3">
+            <div class="card-body">
+                <form action="phpCon/formHandler.php" method="post" class="login-form">
+                    <h2 class="card-title"><strong>Login</strong></h2>
+                    <div class="form-group">
+                        <input type="text" id="username" name="username" class="form-control" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn button">Login</button>
+                    <div class="signup-link">
+                        <a href="default.php" class="defaultCss">Default</a>
+                    </div>
+                </form>
+    <!-- add the whole code -->
 
-
-    <div class="container div-container">
-    <div class="card mt-3">
-        <div class="card-body">
-            <form action="phpCon/formHandler.php" method="post" class="mt_form">
-                <h2 class="card-title">Login</h2>
-                <div class="form-group">
-                    <label for="username">Username or Email:</label>
-                    <input type="text" id="username" name="username" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" class="form-control" required>
-                </div>
-                <button type="submit" class="button">Login</button>
-                <span style="margin: 0 15px;"></span> <!-- Add spacing between the buttons and link -->
-                <a href="default.php" class="button">Default</a>
-            </form>
             <div class="p-2">
                 <?php
                 // Check if the error parameter is set in the URL
