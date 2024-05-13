@@ -1,15 +1,15 @@
-<?php
+<!-- <?php
 
-session_start();
+// session_start();
 
-// Check if the user is not logged in or is not an admin
-if (!isset($_SESSION["loggedin"])) {
-    // Redirect the user to the login page or another appropriate page
-    header("Location: ../index.php");
-    exit;
-}
+// // Check if the user is not logged in or is not an admin
+// if (!isset($_SESSION["loggedin"])) {
+//     // Redirect the user to the login page or another appropriate page
+//     header("Location: ../index.php");
+//     exit;
+// }
 
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +27,7 @@ if (!isset($_SESSION["loggedin"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TSC Commit Date Updator</title>
+    <title>Analog Commit Date Updater</title>
     <link rel="stylesheet" href="../styles.css">
     <!-- Include Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -203,8 +203,8 @@ if (isset($_POST['submitFilter'])) {
     
     $sqlSelect = "SELECT TOP 20 lotnumber, Commitdate, datecode 
     FROM PL_ProductionOrder 
-    WHERE customercode = 69 
-    AND processtypecode = 20 AND lotnumber LIKE '%$lotNumberFilter%' 
+    WHERE customercode = 36 
+    AND processtypecode = 1 AND lotnumber LIKE '%$lotNumberFilter%' 
     order by pocode desc;";
     
     // Execute select query
@@ -238,7 +238,7 @@ if (isset($_POST['submitFilter'])) {
             echo "<input type='hidden' name='lotnumber' value='" . $row['lotnumber'] . "'>";
             echo "<input type='hidden' name='dateformat' value='" . $dateFormat . "'>";
             echo "<div class='form-group'>";
-            echo "<input type='text' class='form-control' id='newdatecode' name='newdatecode' placeholder='New Date Code'>";
+            echo "<input type='text' class='form-control' id='newCommitDate' name='newCommitDate' placeholder='New Commit Date'>";
             echo "</div>";
             echo "<button type='submit' class='btn button btn-update' name='submitUpdate'>Update</button>";
             echo "</form>";
@@ -259,11 +259,11 @@ if (isset($_POST['submitFilter'])) {
 // Handle update action
 if (isset($_POST['submitUpdate'])) {
     $lotNumberToUpdate = $_POST['lotnumber'];
-    $newDateCode = $_POST['newdatecode'];
+    $newCommitDate = $_POST['newCommitDate'];
 
     // Construct the SQL update query to update the datecode
     $sqlUpdate = "UPDATE PL_ProductionOrder 
-    SET datecode = '$newDateCode' 
+    SET commitDate = '$newCommitDate' 
     WHERE lotnumber = '$lotNumberToUpdate'";
     
     // Execute the update query

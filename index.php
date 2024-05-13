@@ -23,7 +23,7 @@ session_start();
         .login-container {
             max-width: 400px;
             margin: auto;
-            margin-top: 100px;
+            margin-top: 30px;
             border: 1px solid #ccc;
             padding: 30px;
             border-radius: 10px;
@@ -184,7 +184,7 @@ session_start();
         <nav class="navbar navbar-expand-xl bg-dark navbar-dark p-4 fixed-top ">
             <span href="#" class="navbar-brand"><span>ATEC </span>CENTRAL SYSTEMS</span>
     </section> 
-    
+
     <!-- add the whole code -->
         <div class="container login-container">
         <div class="card mt-3">
@@ -199,6 +199,7 @@ session_start();
                     </div>
                     <button type="submit" class="btn button">Login</button>
                     <div class="signup-link">
+                        <span mt-1></span>
                         <a href="default.php" class="defaultCss">Default</a>
                     </div>
                 </form>
